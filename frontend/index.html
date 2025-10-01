@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-HK">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icon-192x192.png" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Meta Tags -->
+    <title>LectureScript - Real-time Transcription for HK Students</title>
+    <meta name="description" content="Real-time lecture transcription for Hong Kong university students with AI-powered summaries. Record, transcribe, and export your lectures with ease." />
+    <meta name="keywords" content="transcription, lecture, university, Hong Kong, AI, voice-to-text, Cantonese, English" />
+    <meta name="author" content="LectureScript" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="msapplication-navbutton-color" content="#3b82f6" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="LectureScript" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lecturescript.app/" />
+    <meta property="og:title" content="LectureScript - Real-time Transcription" />
+    <meta property="og:description" content="AI-powered lecture transcription for Hong Kong university students" />
+    <meta property="og:image" content="/icon-512x512.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://lecturescript.app/" />
+    <meta property="twitter:title" content="LectureScript - Real-time Transcription" />
+    <meta property="twitter:description" content="AI-powered lecture transcription for Hong Kong university students" />
+    <meta property="twitter:image" content="/icon-512x512.png" />
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://api.openai.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

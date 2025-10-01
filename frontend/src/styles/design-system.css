@@ -1,0 +1,429 @@
+/* 🎨 LectureScript Design System - Apple × Notion Inspired
+ * Author: Steve Jobs' Spirit via Peter Levler
+ * Philosophy: Simplicity is the ultimate sophistication
+ */
+
+/* ========================================
+   GOLDEN RATIO FOUNDATION (φ = 1.618)
+   ======================================== */
+
+:root {
+  /* Golden Ratio Scale */
+  --phi: 1.618;
+  --phi-inverse: 0.618;
+
+  /* Spacing Scale (Golden Ratio) */
+  --space-xs: 0.382rem;     /* 6.112px ~ 6px */
+  --space-sm: 0.618rem;     /* 9.888px ~ 10px */
+  --space-md: 1rem;         /* 16px */
+  --space-lg: 1.618rem;     /* 25.888px ~ 26px */
+  --space-xl: 2.618rem;     /* 41.888px ~ 42px */
+  --space-2xl: 4.236rem;    /* 67.776px ~ 68px */
+  --space-3xl: 6.854rem;    /* 109.664px ~ 110px */
+
+  /* Typography Scale (Golden Ratio) */
+  --text-xs: 0.618rem;      /* 9.888px ~ 10px */
+  --text-sm: 0.809rem;      /* 12.944px ~ 13px */
+  --text-base: 1rem;        /* 16px */
+  --text-md: 1.309rem;      /* 20.944px ~ 21px */
+  --text-lg: 1.618rem;      /* 25.888px ~ 26px */
+  --text-xl: 2.618rem;      /* 41.888px ~ 42px */
+  --text-2xl: 4.236rem;     /* 67.776px ~ 68px */
+
+  /* ========================================
+     APPLE COLOR PALETTE
+     ======================================== */
+
+  /* Neutrals (Apple SF Pro inspired) */
+  --color-white: #FFFFFF;
+  --color-gray-50: #F9FAFB;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D1D5DB;
+  --color-gray-400: #9CA3AF;
+  --color-gray-500: #6B7280;
+  --color-gray-600: #4B5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #111827;
+
+  /* Primary (Apple Blue) */
+  --color-primary: #007AFF;
+  --color-primary-dark: #0051D5;
+  --color-primary-light: #5AC8FA;
+
+  /* Success (Apple Green) */
+  --color-success: #34C759;
+  --color-success-dark: #248A3D;
+
+  /* Warning (Apple Orange) */
+  --color-warning: #FF9500;
+
+  /* Error (Apple Red) */
+  --color-error: #FF3B30;
+
+  /* 🌓 Dynamic Colors (Light Mode Default) */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F7F7F5;
+  --bg-tertiary: #EFEEEC;
+  --bg-elevated: #FFFFFF;
+
+  --text-primary: #37352F;
+  --text-secondary: #6B7280;
+  --text-tertiary: #9CA3AF;
+  --text-inverse: #FFFFFF;
+
+  --border-primary: #E5E7EB;
+  --border-secondary: #D1D5DB;
+}
+
+/* ========================================
+   🌙 DARK MODE (macOS-inspired)
+   ======================================== */
+
+[data-theme="dark"] {
+  /* Dark Mode Backgrounds */
+  --bg-primary: #1C1C1E;
+  --bg-secondary: #2C2C2E;
+  --bg-tertiary: #3A3A3C;
+  --bg-elevated: #2C2C2E;
+
+  /* Dark Mode Text */
+  --text-primary: #FFFFFF;
+  --text-secondary: #AEAEB2;
+  --text-tertiary: #8E8E93;
+  --text-inverse: #000000;
+
+  /* Dark Mode Borders */
+  --border-primary: #38383A;
+  --border-secondary: #48484A;
+
+  /* Adjust grays for dark mode */
+  --color-gray-50: #1C1C1E;
+  --color-gray-100: #2C2C2E;
+  --color-gray-200: #38383A;
+  --color-gray-300: #48484A;
+
+  /* ========================================
+     APPLE SHADOWS & BLUR
+     ======================================== */
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Apple-style blur */
+  --blur-sm: blur(8px);
+  --blur-md: blur(16px);
+  --blur-lg: blur(24px);
+
+  /* ========================================
+     GOLDEN RATIO LAYOUT
+     ======================================== */
+
+  /* Split ratios based on golden ratio */
+  --split-major: 61.8%;     /* Larger section */
+  --split-minor: 38.2%;     /* Smaller section */
+
+  /* Max widths for content */
+  --content-max-width: 1440px;
+  --content-narrow: 888px;   /* ~55% of 1440px */
+
+  /* ========================================
+     TYPOGRAPHY (San Francisco inspired)
+     ======================================== */
+
+  --font-primary: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif;
+  --font-mono: 'SF Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Monaco, monospace;
+
+  /* Font weights (Apple precision) */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Line heights (Golden Ratio) */
+  --leading-tight: 1.309;   /* φ^-1 * 2 */
+  --leading-normal: 1.618;  /* φ */
+  --leading-relaxed: 2.618; /* φ^2 */
+
+  /* ========================================
+     TRANSITIONS (60fps Apple smoothness)
+     ======================================== */
+
+  --transition-fast: 150ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  --transition-elastic: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Apple's signature spring animation */
+  --spring-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* ========================================
+     BORDER RADIUS (Apple precision)
+     ======================================== */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 26px;
+  --radius-full: 9999px;
+
+  /* ========================================
+     Z-INDEX LAYERS
+     ======================================== */
+
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-overlay: 1200;
+  --z-modal: 1300;
+  --z-toast: 1400;
+  --z-tooltip: 1500;
+}
+
+/* ========================================
+   GLOBAL RESETS (Apple-style)
+   ======================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Glass morphism (Apple style) */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: var(--blur-md);
+  -webkit-backdrop-filter: var(--blur-md);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: var(--blur-md);
+  -webkit-backdrop-filter: var(--blur-md);
+}
+
+/* Elevation shadows */
+.elevation-1 { box-shadow: var(--shadow-sm); }
+.elevation-2 { box-shadow: var(--shadow-md); }
+.elevation-3 { box-shadow: var(--shadow-lg); }
+.elevation-4 { box-shadow: var(--shadow-xl); }
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all var(--transition-base);
+}
+
+.transition-spring {
+  transition: all 500ms var(--spring-bounce);
+}
+
+/* Focus states (Apple accessibility) */
+.focus-ring:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ========================================
+   🎬 2025 IMMERSIVE ANIMATIONS
+   ======================================== */
+
+/* Smooth fade-in with upward motion */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in from left */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale in with elastic bounce */
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Shimmer effect for loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* 🆕 2025 Trend: Kinetic Typography Float */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* 🆕 2025 Trend: 3D Card Tilt Effect */
+@keyframes card-tilt {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  }
+}
+
+/* 🆕 2025 Trend: Glow Pulse (Gaming-inspired) */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 122, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 122, 255, 0.6);
+  }
+}
+
+/* 🆕 2025 Trend: Gradient Shift */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 🆕 2025 Trend: Morphing Shape */
+@keyframes morph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+/* Animation Classes */
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s var(--spring-bounce);
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.4s var(--spring-bounce);
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s var(--spring-bounce);
+}
+
+.animate-float {
+  animation: float-gentle 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* 🎨 2025 Trend: 3D Card Hover Effect */
+.card-3d {
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* ========================================
+   CUSTOM SCROLLBAR (macOS style)
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-300);
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-400);
+  background-clip: content-box;
+}
+
+/* ========================================
+   TEXT SELECTION
+   ======================================== */
+
+::selection {
+  background-color: var(--color-primary-light);
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background-color: var(--color-primary-light);
+  color: var(--text-primary);
+}
